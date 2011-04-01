@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+
+<link rel="stylesheet" href="qunit/qunit.css" type="text/css" media="screen" />
+<script type="text/javascript" src="qunit/qunit.js"></script>
+
+<title>freezer.js test</title>
+<script type="text/javascript">
+(function(global) {
+	// cache native objects, to check later whether freezer.js doesn't override them
+	var natives = ['Number', 'String', 'Boolean', 'Object', 'Array', 'Function', 'RegExp', 'Date', 'Error', 'TypeError',
+					'ReferenceError', 'URIError', 'SyntaxError', 'EvalError', 'RangeError',
+					'Math', 'JSON', 'undefined', 'Infinity', 'NaN',
+					'eval', 'parseInt','parseFloat', 'isFinite', 'isNaN', 'escape', 'unescape',
+					'encodeURI', 'encodeURIComponent', 'decodeURI', 'decodeURIComponent'];
+	var name, i = 0;
+	global.nativesCache = {};
+	while(name = natives[i++]) {
+		global.nativesCache[name] = global[name];
+	}
+})(this);
+</script>
+<script type="text/javascript" src="../source/freezer.js"></script>
+<script type="text/javascript" src="freezer_test.js"></script>
+
+</head>
+<body>
+
+	<h1 id="qunit-header"></h1>
+	<h2 id="qunit-banner"></h2>
+	<div id="qunit-testrunner-toolbar"></div>
+	<h2 id="qunit-userAgent"></h2>
+	<ol id="qunit-tests"></ol>
+	<div id="qunit-fixture"></div>
+
+	<script type='text/javascript'>
+	(function() {
+		var title = document.title;
+		document.getElementById('qunit-header').innerHTML = title;
+		document.getElementById('qunit-fixture').innerHTML = title;
+	})();
+	</script>
+	
+</body>
+</html>

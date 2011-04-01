@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<title>Strict Mode test</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+	<link type="text/css" rel="stylesheet" href="style/syntax-highlighter/SyntaxHighlighter.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="style/main.css" />
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
+	
+	<script type="text/javascript" src="script/syntax-highlighter/shCore.js"></script>
+	<script type="text/javascript" src="script/syntax-highlighter/shBrushXml.js"></script>
+	<script type="text/javascript" src="script/syntax-highlighter/shBrushJScript.js"></script>
+
+	<script type="text/javascript" src="script/main.js"></script>
+	
+</head>
+
+<body>
+	
+	<div id="main">
+
+		<div class="path">
+			<a href="/">home</a> &lt;
+			Strict Mode test
+		</div>
+
+		<div id="content">
+
+			<h1>Strict Mode test</h1>
+
+			<h2>// All features test of ECMAScript 5 "Strict Mode" - evaluation, semantics and exceptions.</h2>
+
+			
+			<h3>Inpiration</h3>
+			
+			<p>
+			The test was inspired by the famous strict-mode test coded by <a href="http://kangax.github.com/es5-compat-table/strict-mode/">Kangax</a>
+			and of course <a target="_blank" href="http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-262.pdf">ECMAScript 5 specification (PDF)</a>.
+			</p>
+
+			
+			<h3>Browser support</h3>
+			
+			<div>As for today (April 1, 2011) the strict mode is fully supported only by FireFox 4 web browser.</div>
+
+			
+			<h3>Why to "use strict"?</h3>
+			
+			<p>
+			Strict mode environment is going to be much better world for js developers.
+			</p>
+			
+			<p>
+			Incredible possilities of ECMAScript 5 of sealing and freezing object properties
+			together with Strict Mode exceptions bring consistency and predictibility, that are very needed in complex, big-scale projects. 
+			</p>
+					
+
+			<h3>Use with caution</h3>
+
+			<p>
+				But beware, use it with caution because the strict mode will not only rise exceptions but also will change the way your code is evaluated.
+				We need to be sure your code behave the same way in strict mode and in unstricted environment.
+				Listen what Brendan Eich is saying about that:
+				<div><a href="http://www.aminutewithbrendan.com/pages/25ef5ecdfef99bcd5eff95bc4b00086b">ES5 Strict Mode, Use With Caution (by Brendan Eich)</a></div>
+			</p>
+			
+			
+			<h3>Usage example</h3>
+
+			<pre name="code" class="js:nocontrols:nogutter">
+			
+				var arr = [];
+				
+				// strict scope
+				(function() {
+					"use strict";
+					
+					delete arr.length; // error thrown!
+					
+				})();
+				
+				// non-strict scope
+				(function() {
+				
+					delete arr.length; // silently fails
+					
+				})();
+			
+			</pre>
+
+
+			<h3>Git repository</h3>
+
+			<div>The test source</div>
+			<a href="https://github.com/mrac/strict-mode-test">Strict-mode-test on GitHub</a>
+
+			
+			<h3>The test</h3>
+
+			<div>And finally here's the QUnit test:</div>
+			<a href="strictmode-test.html">strictmode_test.html</a>
+			
+			<script type="text/javascript">
+			dp.SyntaxHighlighter.ClipboardSwf = 'script/syntax-highlighter/clipboard.swf';
+			dp.SyntaxHighlighter.HighlightAll('code');
+			</script>
+			
+			<div class="footer">
+				&copy; 2011 Michal Raczkowski - MIT Licence
+			</div>
+
+		</div>
+		
+	</div>
+</body>
+
+</html>
