@@ -1,0 +1,6 @@
+# Strict Mode test
+
+It tests whether the web browser supports ECMAScript 5 "Strict Mode" - evaluation, semantics and exceptions.
+
+More information you can find at:
+http://mrac.github.com/strict-mode-test
