@@ -28,8 +28,10 @@
 			event.preventDefault();
 			variant.fadeOut(200, function() {
 				setTimeout(function() {
-					variant.show();
-				},1000);
+					variant.fadeIn(100, function() {
+						whenDocumentFadiIn();
+					}
+				},100);
 				location = tr.attr("href");
 			});
 		});
