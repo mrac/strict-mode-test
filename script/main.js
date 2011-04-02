@@ -27,7 +27,9 @@
 			var tr = $(event.target);
 			event.preventDefault();
 			variant.fadeOut(200, function() {
-				variant.show();
+				setTimeout(function() {
+					variant.show();
+				},1000);
 				location = tr.attr("href");
 			});
 		});
