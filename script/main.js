@@ -31,7 +31,7 @@
 					variant.fadeIn(100, function() {
 						whenDocumentFadeIn();
 					});
-				},100);
+				},500);
 				location = tr.attr("href");
 			});
 		});
