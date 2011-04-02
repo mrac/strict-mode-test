@@ -29,8 +29,8 @@
 			variant.fadeOut(200, function() {
 				setTimeout(function() {
 					variant.fadeIn(100, function() {
-						whenDocumentFadiIn();
-					}
+						whenDocumentFadeIn();
+					});
 				},100);
 				location = tr.attr("href");
 			});
