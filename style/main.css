@@ -17,11 +17,11 @@ body {
 
 a:link, a:visited, a:active {
 	text-decoration: none;
-	color: #aa3333;
+	color: #3333aa;
 }
 a:hover {
 	text-decoration: underline;
-	color: red;
+	color: blue;
 }
 
 table {
