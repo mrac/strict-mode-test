@@ -24,6 +24,23 @@ a:hover {
 	color: blue;
 }
 
+
+@media screen and (max-device-width: 850px) {
+	
+	#main {
+		width: 90%
+	}
+	
+	a:link, a:visited {
+		text-decoration: underline;
+		color: blue;
+	}
+	a:hover, a:active {
+		text-decoration: underline;
+		color: #770077;
+	}
+}
+
 table {
 	border: 1px solid #999999;
 	border-collapse: collapse;
