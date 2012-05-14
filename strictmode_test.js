@@ -1,4 +1,3 @@
-
 //#
 test("context of strict mode function", function() {
 
@@ -249,16 +248,16 @@ test("arguments object should not dynamically share its values with formal param
 	function func2(a) {
 		"use strict";
 		arguments[0] = 10;
-		return (arguments[0] !== 10); 
+		return (a !== 10); 
 	}
 
 	x = func1(5);
 	y = func2(5);
 	
 	//#
-	ok(x, "an arguments element doesn't change when a corresponding parameter variable changes inside function");
+	ok(x, "the arguments element doesn't change when the corresponding parameter variable changes inside function");
 	//#
-	ok(y, "any change of an arguments element corresponding to a formal parameter silently fails");
+	ok(y, "the parameter doesn't change when the corresponding arguments element changes inside function");
 	
 });
 
