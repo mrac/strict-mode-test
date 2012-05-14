@@ -1,5 +1,4 @@
 
-
 //#
 test("context of strict mode function", function() {
 
