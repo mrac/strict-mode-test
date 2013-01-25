@@ -556,16 +556,20 @@ test("access to strict mode function properties 'arguments' and 'caller'", funct
 test("anonymous function name variable is read-only", function() {
 	
 	var err;
-	
+	var newValue = function() {};
+	var returnFunc;
 	(function func() {
 		"use strict";
 		try {
-			func = function() {};
+			returnFunc = func;
+			func = newValue;
+			returnFunc = func;
 		} catch(error) {
 			err = error;
 		}
 	})();
-	ok(err, "a variable referencing an anonymous function is non-writable : "+err);
+	ok(returnFunc !== newValue, "a variable referencing an anonymous function should be read-only");
+	ok(err, err || "assignment to a variable referencing an anonymous function should throw TypeError");
 	
 });
 
