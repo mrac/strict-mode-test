@@ -70,15 +70,16 @@
 
 			<h3>Use with caution</h3>
 
-			<p>
-				The strict mode will not only rise exceptions but also will change the way JavaScript code is evaluated.
-				So we need to be sure our code behave the same way in strict mode and in unstricted environment.
-				Listen what Brendan Eich is saying about that:
-				<br/>
-				<a href="http://www.aminutewithbrendan.com/pages/25ef5ecdfef99bcd5eff95bc4b00086b">ES5 Strict Mode, Use With Caution (by Brendan Eich)</a>
 			</p>
-			
-			
+				<h4>How we can "use strict" to be backward-compatible with old browsers that don't support strict mode?</h4><h4>There are only 3 rules:</h4>
+				<ul>
+					<li>Make sure that throwing errors is just a development help and not a part of application logic</li>
+					<li>Don't rely on the <b>arguments</b> object as separated from parameter variables</li>
+					<li>Don't rely on the default function context <b>this</b> as undefined</li>
+				</ul>
+			</p>
+
+
 			<h3>Usage example</h3>
 
 			<pre id="code_1" class="js:nocontrols:nogutter">
